@@ -1,4 +1,5 @@
 🌍 Wanderlust Travel Website
+
 A full-stack travel agency web application built using Flask and SQLite that allows users to contact, register, book trips, submit reviews, and provide feedback.
 The application includes a secure Admin Dashboard to manage all user submissions.
 
@@ -21,6 +22,9 @@ The application includes a secure Admin Dashboard to manage all user submissions
 💾 Persistent data storage and retrieval using SQLite
 
 🛠️ Technologies Used
+
 🎨 Frontend: HTML, CSS, Responsive Design
+
 ⚙️ Backend: Python, Flask, SQLAlchemy
+
 🗄️ Database: SQLite
