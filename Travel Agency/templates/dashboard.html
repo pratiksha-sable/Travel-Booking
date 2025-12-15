@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Admin Dashboard</h1>
+<p><a href="/logout">Logout</a></p>
+
+<h2>Contacts <form method="POST" action="/clear/contacts"><button>Clear All</button></form></h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th><th>Created At</th></tr>
+{% for c in contacts %}
+<tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.email }}</td><td>{{ c.message }}</td><td>{{ c.created_at }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Registrations <form method="POST" action="/clear/registrations"><button>Clear All</button></form></h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Date</th><th>Destination</th></tr>
+{% for r in registrations %}
+<tr><td>{{ r.id }}</td><td>{{ r.name }}</td><td>{{ r.email }}</td><td>{{ r.phone }}</td><td>{{ r.date }}</td><td>{{ r.destination }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Bookings <form method="POST" action="/clear/bookings"><button>Clear All</button></form></h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Destination</th><th>Persons</th><th>Travel Date</th></tr>
+{% for b in bookings %}
+<tr><td>{{ b.id }}</td><td>{{ b.name }}</td><td>{{ b.email }}</td><td>{{ b.phone }}</td><td>{{ b.destination }}</td><td>{{ b.persons }}</td><td>{{ b.travel_date }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Reviews <form method="POST" action="/clear/reviews"><button>Clear All</button></form></h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Rating</th><th>Review</th><th>Created At</th></tr>
+{% for rv in reviews %}
+<tr><td>{{ rv.id }}</td><td>{{ rv.name }}</td><td>{% for i in range(rv.rating) %}⭐{% endfor %}</td><td>{{ rv.review }}</td><td>{{ rv.created_at }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Feedbacks <form method="POST" action="/clear/feedbacks"><button>Clear All</button></form></h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Rating</th><th>Feedback</th><th>Created At</th></tr>
+{% for f in feedbacks %}
+<tr><td>{{ f.id }}</td><td>{{ f.name }}</td><td>{{ f.email }}</td><td>{% for i in range(f.rating) %}⭐{% endfor %}</td><td>{{ f.feedback }}</td><td>{{ f.created_at }}</td></tr>
+{% endfor %}
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderTours & Travels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<script>
+  // Block access if not logged in
+  if (localStorage.getItem("loggedIn") !== "true") {
+    alert("Please login first!");
+    window.location.href = "signin.html";
+  }
+
+  // Show welcome message on first load
+  window.onload = () => {
+    const name = localStorage.getItem("user");
+    if (name) {
+      alert("👋 Welcome to our WanderTours, " + name + "!");
+      document.getElementById("user-name-display").innerText = "Hi,  "+ name;
+
+    }
+  }
+
+  function logout() {
+    localStorage.clear();
+    window.location.href = "signin.html";
+  }
+
+  // ✅ Logout function with message
+  function logout() {
+    alert("✅ You have been successfully logged out!");
+    localStorage.clear();
+    window.location.href = "signin.html"; 
+  }
+</script>
+
+  <!-- Header -->
+  <header>
+  <div class="logo">WanderTours & Travels✈🌍</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#services">Services</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Floating User Info -->
+    <div style="position: absolute; top: 60px; right: 20px; text-align: center; font-size: 19px;">
+      <p id="user-name-display" style="margin: 0; font-weight: bold; color: black;"></p>
+      <button onclick="logout()" style="padding: 6px 14px; font-size: 12px; background: red; color: white; border: none; border-radius: 3px; text-align: center;">Logout</button>
+    </div>
+  </header>
+  </div>
+</header>
+  
+<section id="home" class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="C:\Users\user\Downloads\186115-877653483_medium.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-text">
+    <h1>"Explore the World with Us"</h1>
+    <p>Your adventure starts here.</p>
+    <button onclick="scrollToPackages()">View Packages</button>
+  </div>
+</section>
+
+
+<!-- About WanderTours & Travels -->
+ <section id="about" class="About">
+<section style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; color: black;; margin-bottom: 20px;">About WanderTours & Travels</h2>
+<p style="font-size: 1.2rem;  line-height: 1.8;">
+      WanderTours & Travels is your trusted partner in creating unforgettable journeys...with personalized tour packages, 24/7 customer support, and expert travel guides.
+
+    </p>
+    <p style="font-size: 1.2rem;  line-height: 1.8;">
+      At WanderTours & Travels, we believe that travel is not just about visiting places—it's about creating unforgettable stories and experiences. Whether you're seeking serene beaches, majestic mountains, cultural escapes, or adventurous trails, we have a perfect package just for you.
+    </p>
+    <p style="font-size: 1.2rem;  margin-top: 20px; line-height: 1.8;">
+      ✈ Custom Tour Packages | 🏨 Hotel Bookings | 🚗 Cab Rentals | 📞 24x7 Support | 🌍 5000+ Happy Travelers
+    </p>
+    <!-- Line below -->
+    <hr style="margin-top: 50px; border: none; height: 2px; background: linear-gradient(to right, #00bcd4, #1e3d59, #00bcd4); width: 80%; margin-left: auto; margin-right: auto; border-radius: 5px;">
+  </div>
+</section>
+
+ <!-- Travel Packages -->
+  <section id="packages" class="packages">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Our Travel Packages</h2>
+    <p class="package-intro" style="font-size: 1.2rem;">
+  Whether you're dreaming of serene beaches, thrilling mountain adventures, or rich cultural explorations, <strong>WanderTours & Travels</strong> has curated travel packages to suit every type of traveler. From Goa's golden sands and party vibes to Manali's snowy peaks and tranquil valleys, our packages offer comfort, adventure, and unforgettable memories — all at affordable prices. <br><br>
+  Every package includes top-rated accommodations, guided experiences, local insights, and seamless travel planning — so you can focus on enjoying your journey. <br><br>
+  Explore our handpicked travel deals below and let your dream vacation begin!
+</p>
+
+    <div class="package-card">
+      <img src="https://yu-hotel.com/wp-content/uploads/2023/03/best-luxury-hotels-in-north-goa-YU-Hotel.jpg" alt="Goa" />
+      <img src="https://im.hunt.in/cg/Goa/About/Entertainment/river-cruise3.jpg" alt="Goa" />
+
+      <h3 style="font-size: 25px; margin-bottom: 10px;">Goa Delight</h3>
+<p>
+  Experience the perfect blend of sun, sand, and serenity with our <strong>Goa Delight</strong> package. Whether you're a beach lover, party goer, or heritage explorer, Goa offers something for everyone.
+</p>
+<ul>
+  <li>🏖 Stay at a 3/4-star beachside resort with modern amenities</li>
+  <li>🚖 Airport pick-up and drop included</li>
+  <li>🕺 Nightlife tour including Tito's Lane and beach clubs</li>
+  <li>🏰 Explore Old Goa churches & Portuguese architecture</li>
+  <li>⛵ Mandovi River sunset cruise with music & dinner</li>
+  <li>🍤 Daily breakfast + 1 seafood dinner at a local restaurant</li>
+</ul>
+<p class="price">Price: ₹10,000 – ₹15,000 (per person)</p>
+<button onclick="openBookingModal('Goa Delight')">Book Now</button>
+</div>
+
+<div class="package-card">
+      <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2023/04/Solang-Valley-Manali-Himachal.jpg?resize=999%2C749" alt="Manali" />
+      <img src="https://mountainsojourns.com/wp-content/uploads/Snow-Trek-In-Manali_06.jpg" alt="Manali" />
+
+      <h3 style="font-size: 25px; margin-bottom: 10px;">Manali Adventure</h3>
+<p>
+  Embark on a magical journey to the mountains with our <strong>Manali Adventure</strong> package — perfect for nature lovers, thrill seekers, and snow enthusiasts. From snow-capped peaks to cozy cafes and adventure trails, Manali has it all.
+</p>
+<ul>
+  <li>🏔 Accommodation in a deluxe mountain-view hotel</li>
+  <li>🚐 Private cab for local sightseeing and transfers</li>
+  <li>❄ Visit Solang Valley for snow activities like skiing and zip-lining</li>
+  <li>🌄 Rohtang Pass trip (subject to weather & permit)</li>
+  <li>🕉 Explore Hadimba Temple, Vashisht hot springs, and Mall Road</li>
+  <li>🔥 Bonfire night with music at the resort</li>
+</ul>
+<p class="price">Price: ₹18,000 – ₹30,000 (per person)</p>
+<button onclick="openBookingModal('Manali Adventure')">Book Now</button>
+  </div>
+  </section>
+
+<section class="reviews-section">
+  <h2 style="font-size: 40px; color: black; margin-bottom: 10px;">Package Ratings & Reviews</h2>
+  <p style="font-size: 1.2rem;">Read what our happy travelers have to say! Our packages are loved by thousands and rated for their quality, comfort, and unforgettable experiences.</p>
+
+  <div class="review-cards-container">
+    <div class="review-card">
+      <h3>🌴 Goa Delight – Rating: <span class="rating">⭐ 4.6/5</span></h3>
+      <p>💬 "Amazing beach experience! Loved the cruise!" – Anjali R.</p>
+      <p>💬 "Perfect mix of relaxation and nightlife." – Vikram S.</p>
+      <p>💬 "Goa felt magical! Great hotel and staff." – Neha M.</p>
+    </div>
+
+    <div class="review-card">
+      <h3>🏔 Manali Adventure – Rating: <span class="rating">⭐ 4.8/5</span></h3>
+      <p>💬 "The snow trek was unforgettable!" – Meena T.</p>
+      <p>💬 "Loved the bonfire & mountain views!" – Rajiv K.</p>
+      <p>💬 "Smooth arrangements and helpful guides." – Komal B.</p>
+    </div>
+  </div>
+</section>
+<!-- Services -->
+  <section id="services" class="packages">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Our Services</h2>
+    <p class="service-intro" style="font-size: 1.2rem;">
+  At <strong>WanderTours & Travels</strong>, we offer a complete suite of travel services designed to make your journey smooth, memorable, and stress-free. From flight bookings and hotel accommodations to visa assistance and expert local guides — we’ve got everything covered for you.<br><br>
+  Our dedicated team ensures every detail of your trip is handled with care, precision, and a personal touch. Whether it's a family vacation, business trip, or a solo adventure — we deliver customized services to fit your unique travel needs.
+</p>
+
+    <div class="card-container">
+      <div class="service-card">
+        <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-69660,resizemode-75,msid-105076611/industry/transportation/airlines-/-aviation/travel-sites-told-to-refund-air-tickets-booked-during-lockdown.jpg" alt="Flight Booking">
+        <h3>Flight Bookings</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://media.gettyimages.com/id/1448506100/photo/male-hotel-receptionist-assisting-female-guest.jpg?s=612x612&w=gi&k=20&c=A4p3ofkK0Sixxet1UPYr5xycukL1ESWBxl0WyNUOhDM=" alt="Hotel Booking">
+        <h3>Hotel Reservations</h3> 
+      </div>
+      <div class="service-card">
+        <img src="https://amerbabalfalah.com/wp-content/uploads/2023/08/3-3-1024x683.webp" alt="Visa Assistance">
+        <h3>Visa Assistance</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://www.tourismni.com/globalassets/business-development/support-by-sector/tour-guide/hillsborough-castle.png?width=737&quality=80" alt="Guided Tours">
+        <h3>Local Guide Services</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section id="destinations" class="packages">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Top Destinations</h2>
+    <p class="destination-intro" style="font-size: 1.2rem;">
+  Discover the most loved and iconic destinations around the globe with <strong>WanderTours & Travels</strong>. Whether you're longing for the charm of European cities, the serenity of tropical islands, or the thrill of highland adventures — we bring you the world's best experiences in one place.<br><br>
+  Our featured destinations are handpicked to offer unforgettable memories, cultural richness, scenic beauty, and exciting activities for every kind of traveler. Let your next destination be your best one yet!
+</p>
+    <div class="package-card">
+      <img src="https://thumbs.dreamstime.com/b/eiffel-tower-night-light-paris-france-20029204.jpg" alt="Paris" />
+      <h3 style="font-size: 25px; margin-bottom: 10px;">Paris Escape</h3>
+      <p>Discover the city of love and lights with our <strong>Paris Escape</strong> package. From romantic river cruises to world-class museums, Paris offers timeless charm, fashion, and unforgettable cuisine.
+  </p>
+  <ul>
+    <li>🗼 Eiffel Tower visit with skip-the-line tickets</li>
+    <li>🖼 Louvre Museum entry with guide</li>
+    <li>🚤 Seine River cruise at sunset</li>
+    <li>🥐 Daily breakfast and dinner at a French café</li>
+    <li>🛍 Visit to Champs-Élysées & shopping tour</li>
+    <li>🚖 Airport transfers and local transport included</li>
+  </ul>
+  <p class="price">Price: ₹85,000 – ₹1,20,000 (per person)</p>
+    <h2>🔥 Special Deals on Top Destinations</h2>
+
+  <p>✨ 20% Off - Explore the city of love and lights!</p>
+  <button onclick="openBookingModal('Paris Escape')">Book Now</button>
+</div>
+    </div>
+    <div class="package-card">
+      <img src="https://www.outlooktravelmag.com/media/bali-1-1679062958.profileImage.2x-scaled-webp.webp" alt="Bali" />
+      <h3 style="font-size: 25px; margin-bottom: 10px;">Bali Bliss</h3>
+      <p>Immerse yourself in tropical paradise with our <strong>Bali Bliss</strong> package. From stunning beaches and sacred temples to vibrant nightlife and lush rice terraces — Bali is your perfect escape.
+  </p>
+  <ul>
+    <li>🌊 4-star beachfront resort accommodation</li>
+    <li>⛩ Guided tour of Uluwatu Temple & Kecak Dance</li>
+    <li>🏄 Water sports at Nusa Dua (snorkeling, jet ski)</li>
+    <li>🌅 Sunset dinner at Jimbaran Bay</li>
+    <li>🚐 Full-day tour of Ubud, Monkey Forest & Rice Terraces</li>
+    <li>🛫 Airport pickup/drop & daily breakfast included</li>
+  </ul>
+  <p class="price">Price: ₹70,000 – ₹1,00,000 (per person)</p>
+  <h2>✈ Adventure awaits at a discount!</h2>
+
+  <p>🏝 25% Off - Dive into paradise with tropical views.</p>
+  <button onclick="openBookingModal('Bali Bliss')">Book Now</button>
+</div>
+    </div>
+  </section>
+
+<section class="destination-reviews">
+  <h2 style="font-size: 40px; color: black; margin-bottom: 10px;">Destination Ratings & Reviews</h2>
+  <p style="font-size: 1.2rem;">"Make informed travel decisions with detailed reviews and star ratings from experienced travelers—explore the highlights, tips, and stories that plan your perfect trip!"</p>
+  <div class="card-container">
+
+    <div class="review-card">
+      <h3>Paris Escape</h3>
+      <p>⭐ 4.8/5 (325 reviews)</p>
+      <blockquote>"We were mesmerized by Paris's beauty. The Eiffel Tower tour was so well organized!"</blockquote>
+      <cite>- Ananya R., Mumbai</cite>
+    </div>
+
+    <div class="review-card">
+      <h3>Bali Bliss</h3>
+      <p>⭐ 4.9/5 (410 reviews)</p>
+      <blockquote>"Amazing experience! Bali’s beaches and temples are magical. Great job WanderTours & Travels!"</blockquote>
+      <cite>- Rahul T., Pune</cite>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Reviews -->
+  <section id="reviews" class="packages">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">What Customers Say</h2>
+    <div class="card-container">
+      <div class="service-card">
+        <img src="https://img.freepik.com/free-photo/portrait-smiling-man-outdoors-with-beanie_23-2149256267.jpg?semt=ais_hybrid&w=740" alt="Rohit">
+        <p><strong>Rohit S. :</strong> 💬 "We were a group of 10, and WanderTours & Travels handled everything smoothly—hotels, transportation, and guided tours. The best travel experience I've ever had. Loved it!"</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.freepik.com/free-photo/young-woman-wearing-embroidered-shirt_23-2149394301.jpg?semt=ais_hybrid&w=740" alt="Pooja">
+        <p><strong>Pooja M. :</strong> 💬 "WanderTours & Travels made my dream vacation come true! The booking process was smooth, and every destination was exactly as described. Highly recommended!"</p>
+      </div>
+      <div class="service-card">
+        <img src="https://thumbs.dreamstime.com/b/calm-handsome-man-background-summer-street-young-61126785.jpg" alt="Arjun">
+        <p><strong>Arjun K. :</strong> 💬 "From start to finish, everything was professionally handled. Our family trip to Goa was perfectly arranged and I loved the personalized touch they added to our Goa trip, thanks to WanderTours & Travels!"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="packages">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Our Certifications</h2>
+    <div class="card-container">
+      <div class="service-card">
+        <img src="https://3.imimg.com/data3/PP/SR/MY-1714802/iata-uftaa-travel-tourism-courses.jpg" alt="IATA Certified" style="max-height: 80px;">
+        <p>Member of IATA</p>
+      </div>
+      <div class="service-card">
+        <img src="https://www.taxaj.com/files/Images/Sample%20SPC%209001.jpg" alt="ISO Certification" style="max-height: 80px;">
+        <p>ISO 9001:2015 Certified</p>
+      </div>
+      <div class="service-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY6YTs7kCPMicJBpzsiOpVA-R5AkVgXAZMwg&s" alt="Govt. Registered" style="max-height: 80px;">
+        <p>Govt. of India Registered</p>
+      </div>
+      <div class="service-card">
+        <img src="https://har-production-assets.s3.amazonaws.com/variants/USMexLKandQoUPH92RHBsPEh/bf15e1fa2ab7bef67faf07c8849cb6ba2ac42e07828cd811c90f37bb92a2e91e.png" alt="5-Star Rated" style="max-height: 80px;">
+        <p>5-star Rated on TravelAdvisor</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="packages gallery">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Gallery</h2>
+    <p class="gallery-intro" style="font-size: 1.2rem;">
+  A picture is worth a thousand words — and our gallery tells stories of unforgettable journeys, breathtaking views, and happy travelers. <strong>WanderTours & Travels</strong> captures the magic of every destination we offer, from sandy beaches and snowy mountains to vibrant cityscapes and cultural gems. <br><br>
+  Explore our visual diary and get inspired for your next great adventure!
+</p>
+
+    <img src="https://tripxl.com/blog/wp-content/uploads/2024/08/People-looking-at-the-Himalayas.jpg" />
+    <img src="https://media.flytographer.com/uploads/2023/11/Travel-photo-album-photographer-flytographer-7.jpeg" />
+    <img src="https://www.shutterstock.com/image-photo/tourist-girl-on-mountain-top-260nw-757552030.jpg" />
+    <img src="https://media.flytographer.com/uploads/2023/11/Travel-photo-album-photographer-flytographer-10.jpeg" />
+    <img src="https://media.istockphoto.com/id/1430416050/photo/group-of-young-happy-friends-visiting-paris-and-eiffel-tower.jpg?s=612x612&w=0&k=20&c=KCW69K12NbGWQCFVeUBDz4GtlT-uJNtxpO4IfTPSxUQ="/>
+    <img src="https://s3-eu-west-2.amazonaws.com/aguadoo/app/20180216170724/Banana.jpg"/>
+
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 style="font-size: 42px; color: black; margin-bottom: 10px;">Contact Us</h2>
+    <div class="contact-wrapper">
+      <div class="info">
+        <p><strong>📍 Address:</strong> Office no. 12, 7 Business Square, Near Shivaji Nagar, Pune - 411005</p>
+        <p><strong>📞 Call:</strong> +91 9876543210</p>
+        <p><strong>📧 Email:</strong> info@wandertoursandtravels.com</p>
+        <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.0587915014526!2d73.85674281489272!3d18.52043038740806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c08ef5f56a8f%3A0x28bc52e552890174!2sPune!5e0!3m2!1sen!2sin!4v1620000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        </div>
+      <form onsubmit="submitEnquiry(event)">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Book Package</h3>
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <input type="text" id="bookName" placeholder="👤Full Name" required />
+        <input type="email" id="bookEmail" placeholder="📧Email" required />
+        <input type="tel" id="bookPhone" placeholder="📞Phone No." pattern="[0-9]{10}" required />
+        <input type="destination" id="bookEmail" placeholder="🧭Destination" required />
+        <input type="no.of people" id="bookEmail" placeholder="👥No. Of People" required />
+        <label for="travelDate">📅Select Travel Date:</label>
+        <input type="date" id="travelDateGoa" name="travelDateGoa" min="2025-01-01" max="2025-12-31">
+
+        <button type="submit">Submit Booking</button>
+        <p id="bookingSuccess" style="color: green; display: none;">✅ Booking submitted successfully!</p>
+      </form>
+    </div>
+  </div>
+
+ <!-- ⭐ Unified Review & Rating Section -->
+<section id="unified-reviews" class="review-section">
+  <h2>Leave a Review</h2>
+  <form onsubmit="submitUnifiedReview(event)">
+    <label for="reviewTarget">Select Package or Destination:</label>
+    <select id="reviewTarget" required>
+      <option value="">-- Choose --</option>
+      <option value="Goa Delight">Goa Delight</option>
+      <option value="Manali Adventure">Manali Adventure</option>
+      <option value="Paris">Paris Escape</option>
+      <option value="Bali">Bali Bliss</option>
+    </select>
+
+    <label>Rate:</label>
+    <div class="stars" id="unified-stars">
+      <span onclick="setUnifiedRating(1)">★</span>
+      <span onclick="setUnifiedRating(2)">★</span>
+      <span onclick="setUnifiedRating(3)">★</span>
+      <span onclick="setUnifiedRating(4)">★</span>
+      <span onclick="setUnifiedRating(5)">★</span>
+    </div>
+
+    <textarea id="unifiedReviewText" placeholder="Write your review..." required></textarea>
+    
+  <div class="emoji-reactions" id="emoji-reaction">
+  <span class="emoji" data-value="😍">😍</span>
+  <span class="emoji" data-value="😐">😐</span>
+  <span class="emoji" data-value="😞">😞</span>
+  </div>
+<input type="hidden" name="emoji" id="emoji-value">
+
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <h3>All Reviews</h3>
+  <div id="all-reviews-display" class="reviews-display"></div>
+</section>
+
+<!-- 📢 Feedback Section -->
+<section id="feedback" class="feedback-section">
+  <h2>We Value Your Feedback</h2>
+  <p>Please share your suggestions, questions, or feedback to help us improve your travel experience.</p>
+  <form onsubmit="submitFeedback(event)">
+    <input type="text" id="feedbackName" placeholder="Your Name" required />
+    <input type="email" id="feedbackEmail" placeholder="Your Email" required />
+    <textarea id="feedbackMessage" placeholder="Your Feedback..." required></textarea>
+    <button type="submit">Send Feedback</button>
+    <p id="feedbackSuccess" style="color: blue; display: none;">✅ Thank you for your feedback!</p>
+  </form>
+</section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p style="font-size: 1.2rem;"><strong>Thank you for visiting our website and considering us for your travel dreams. !<br>
+  We promise to make your journey memorable and hassle-free.</strong></p>
+  <p style="font-size: 1.0rem;">© 2025 WanderTours & Travels✈🌍. All rights reserved.</p>
+    </div>
+    <button onclick="scrollToTop()" class="top-button">↑ Back to Top</button>
+  </div>
+</footer>
+
+  <!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

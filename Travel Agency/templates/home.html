@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wanderlust Forms</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Wanderlust Travel Forms</h1>
+
+<h2>Contact</h2>
+<form method="POST" action="/contact">
+<input name="name" placeholder="Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<textarea name="message" placeholder="Message" required></textarea>
+<button>Submit</button>
+</form>
+
+<h2>Registration</h2>
+<form method="POST" action="/register">
+<input name="name" placeholder="Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="phone" placeholder="Phone" required>
+<input name="date" type="date" required>
+<input name="destination" placeholder="Destination" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button>Submit</button>
+</form>
+
+<h2>Booking</h2>
+<form method="POST" action="/booking">
+<input name="name" placeholder="Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="phone" placeholder="Phone" required>
+<input name="destination" placeholder="Destination" required>
+<input name="persons" type="number" placeholder="Persons" required>
+<input name="travel_date" type="date" placeholder="Travel Date" required>
+<button>Submit</button>
+</form>
+
+<h2>Review</h2>
+<form method="POST" action="/review">
+<input name="name" placeholder="Name" required>
+<input name="rating" type="number" min="1" max="5" placeholder="Rating (1-5)" required>
+<textarea name="review" placeholder="Write review" required></textarea>
+<button>Submit</button>
+</form>
+
+<h2>Feedback</h2>
+<form method="POST" action="/feedback">
+<input name="name" placeholder="Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="rating" type="number" min="1" max="5" placeholder="Rating (1-5)" required>
+<textarea name="feedback" placeholder="Write feedback" required></textarea>
+<button>Submit</button>
+</form>
+
+<a href="/admin">Admin Login</a>
+</div>
+</body>
+</html>
